@@ -11,7 +11,7 @@ function Transaction({description, date, category, id, amount,  deleteList}) {
       <td>{category}</td>
       <td>{amount}</td>
       <td>
-        <button style={{color: "red", borderRadius: '3px'}} onClick={()=> deleteList(id)}>DELETE</button>
+        <button style={{color: "#FF0000", borderRadius: '3px'}} onClick={()=> deleteList(id)}>DELETE</button>
       </td>
 
     </tr>
