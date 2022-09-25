@@ -83,6 +83,55 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "date": "",
+      "description": "food",
+      "category": "food",
+      "amount": "20",
+      "id": 13
+    },
+    {
+      "date": "2022-09-25",
+      "description": "Food",
+      "category": "Food",
+      "amount": "200",
+      "id": 14
+    },
+    {
+      "date": "2022-09-26",
+      "description": "Health",
+      "category": "Recreation",
+      "amount": "1500",
+      "id": 15
+    },
+    {
+      "date": "",
+      "description": "",
+      "category": "",
+      "amount": "",
+      "id": 16
+    },
+    {
+      "date": "2022-09-25",
+      "description": "Ugali Nyama Fry",
+      "category": "Food",
+      "amount": "30",
+      "id": 17
+    },
+    {
+      "date": "2022-09-05",
+      "description": "Eggs",
+      "category": "Food",
+      "amount": "300",
+      "id": 18
+    },
+    {
+      "date": "",
+      "description": "",
+      "category": "",
+      "amount": "",
+      "id": 19
     }
   ]
 }

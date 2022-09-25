@@ -1,42 +1,10 @@
-import React, {useEffect} from "react";
+import React from "react";
 import Transaction from "./Transaction";
 
+//use map method for the transactions
+//- Delete a transaction which will remove it from the table and delete it from the backend.
 
-/*PSEUDOCODE 
-function Transaction param(transactions, setTransacaction, setSearch and search)
-*/
-function TransactionsList ({search, setSearch, transactions, setTransactions}){
-//filter transactions
-//create a variable that will filter transactions
-
-//define transactionFilter
-const transactionFilter = transactions.filter((transaction) => transaction.description.toLowerCase().includes(search.toLowerCase(),))
-
-const List = transactionFilter.map((transaction)=>
-{
-  return(
-    <Transaction
-    transactions = {transaction.transactions}
-    setTransactions = {setTransactions}
-    key = {transactions.id}
-    date = {transactions.date}
-    description = {transaction.description}
-    category = {transaction.category}
-    amount = {transaction.amount}
-    id = {transaction.id}
-/>
-  );
-});
-
-
-  //useEffect and fetch to grab transactions from locoalhost
-useEffect(()=>{
-  fetch('http://localhost:8001/transactions')
-  .then((response) => response.json())
-  .then((data) => setTransactions(data))
-},[setTransactions])
-
-
+function TransactionsList({transactions, deleteRecord}) {
   return (
     <table className="ui celled striped padded table">
       <tbody>
@@ -54,7 +22,11 @@ useEffect(()=>{
             <h3 className="ui center aligned header">Amount</h3>
           </th>
         </tr>
-        {List}
+        {transactions.map((data, key) => {
+          return(
+            <Transaction date={data.date} description={data.description} category={data.category} amount={data.amount} key={key} id={data.id} deleteList={deleteRecord} />
+          )
+        })}
       </tbody>
     </table>
   );

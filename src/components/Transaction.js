@@ -1,24 +1,20 @@
 import React from "react";
 
-//ee a table of the transactions. Date/Description/Category/Amount and id for transactions
-//capture transactions data
-//Transaction({date, description, category, amount}) 
-function Transaction({date, category, description, amount, transactions, id, setTransactions}){
-  
- 
-//Table to include date/description/category/amount
+function Transaction({description, date, category, id, amount,  deleteList}) {
+
+  //Add onClick button 
+  //- Delete a transaction which will remove it from the table and delete it from the backend.
   return (
-    
-    <table>
     <tr>
       <td>{date}</td>
       <td>{description}</td>
       <td>{category}</td>
       <td>{amount}</td>
-      
+      <td>
+        <button style={{color: "red", borderRadius: '3px'}} onClick={()=> deleteList(id)}>DELETE</button>
+      </td>
+
     </tr>
-    </table>
-    
   );
 }
 
