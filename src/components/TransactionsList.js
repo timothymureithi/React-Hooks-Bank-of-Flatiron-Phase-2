@@ -6,10 +6,35 @@ import Transaction from "./Transaction";
 function Transaction param(transactions, setTransacaction, setSearch and search)
 */
 function TransactionsList ({search, setSearch, transactions, setTransactions}){
-//useEffect and fetch to grab transactions from locoalhost
+//filter transactions
+//create a variable that will filter transactions
+
+//define transactionFilter
+const transactionFilter = transactions.filter((transaction) => transaction.description.toLowerCase().includes(search.toLowerCase(),))
+
+const List = transactionFilter.map((transaction)=>
+{
+  return(
+    <Transaction
+    transactions = {transaction.transactions}
+    setTransactions = {setTransactions}
+    key = {transactions.id}
+    date = {transactions.date}
+    description = {transaction.description}
+    category = {transaction.category}
+    amount = {transaction.amount}
+    id = {transaction.id}
+/>
+  );
+});
+
+
+  //useEffect and fetch to grab transactions from locoalhost
 useEffect(()=>{
-  fetch()
-})
+  fetch('http://localhost:8001/transactions')
+  .then((response) => response.json())
+  .then((data) => setTransactions(data))
+},[setTransactions])
 
 
   return (
@@ -29,7 +54,7 @@ useEffect(()=>{
             <h3 className="ui center aligned header">Amount</h3>
           </th>
         </tr>
-        {TransactionsList}
+        {List}
       </tbody>
     </table>
   );
